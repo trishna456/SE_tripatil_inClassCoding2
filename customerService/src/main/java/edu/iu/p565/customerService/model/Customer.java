@@ -1,10 +1,17 @@
 package edu.iu.p565.customerService.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 
 import java.util.Objects;
 
+@Entity
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @NotEmpty(message = "name cannot be empty.")
     private String name;
